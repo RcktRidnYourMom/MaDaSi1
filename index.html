@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+</head>
+
+<body>
+
+<form >
+    <div class="container">
+        <h1>Register</h1>
+        <p>Please fill in this form to register users</p>
+        <br>
+        <label><b>Name</b></label>
+        <input type="text" placeholder="Enter Name" name="name" id="name" required>
+        <label><b>Age</b></label>
+        <input type="text" placeholder="Age" name="age" id="age" required>
+        <br>
+        <p>By creating an account you agree to our Terms&Privacy</p>
+        <button type="button" id="submitData" name="submitData" class="registerbtn">Register</button>
+    </div>
+    <div class="container signin">
+        <p>Already have an account?</p>
+    </div>
+</form>
+
+   
+</body>
+ 
+
+</html>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+    import { getFirestore, setDoc, getDoc, addDoc, doc, collection, deleteDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js"
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBkrs_Pedtw8oa6GM0MhbDCdhCwEbFm8qg",
+      authDomain: "test1234lolo.firebaseapp.com",
+      projectId: "test1234lolo",
+      storageBucket: "test1234lolo.appspot.com",
+      messagingSenderId: "1076120272774",
+      appId: "1:1076120272774:web:726ad0df76080f776e7607"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    submitData.addEventListener('click', (e) => {
+
+       var name =document.getElementById('name').value;
+       var age =document.getElementById('age').value;
+       addDoc(collection(db, "Users"), {
+           name: name,
+           age: age
+       });
+
+        //deleteDoc(doc(db, "users", "DC"));
+
+
+    //    getData.addEventListener('click', (e) =>{
+    //        getDoc(doc(db, "Users", "EhhQ1g9cs1ariyLiLvJy")).then(docSnap =>{
+    //            if(docSnap.exists()){
+    //                console.log('Document data', docSnap.data())
+    //            } else {
+    //                console.log('no such data')
+    //            }
+    //        })
+    //    });
+    //    alert('User added');
+     });
+
+    
+  </script>
