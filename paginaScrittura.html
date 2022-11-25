@@ -1,0 +1,164 @@
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: black;
+            }
+    
+            * {
+                box-sizing: border-box;
+            }
+    
+            /* Add padding to containers */
+    
+            .container {
+                padding: 16px;
+                background-color: burlywood;
+            }
+    
+            /* Full-width input fields */
+    
+            input[type=text],
+            input[type=password] {
+                width: 33%;
+                padding: 15px;
+                margin: 5px 0 22px 0;
+                display: list-block;
+                border: none;
+                background: #f1f1f1;
+            }
+    
+            input[type=text]:focus,
+            input[type=password]:focus {
+                background-color: #ddd;
+                outline: none;
+            }
+    
+            /* Overwrite default styles of hr */
+    
+            hr {
+                border: 1px solid #f1f1f1;
+                margin-bottom: 25px;
+            }
+    
+            /* Set a style for the submit button */
+    
+            .sbmtbtn {
+                background-color: #04AA6D;
+                color: white;
+                padding: 16px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 20%;
+                opacity: 0.9;
+            }
+
+            
+            .caricaart {
+                background-color: #04AA6D;
+                color: green;
+                padding: 16px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 20%;
+                opacity: 0.9;
+            }
+    
+            .sbmtbtn:hover {
+                opacity: 1;
+            }
+    
+            /* Add a blue text color to links */
+    
+            a {
+                color: dodgerblue;
+            }
+    
+            /* Set a grey background color and center the text of the "sign in" section */
+    
+            .caricaart {
+                background-color: #f1f1f1;
+                text-align: center;
+            }
+        </style>
+
+    </head>
+    <body>
+        <form>
+            <div class="container">
+                <h1>Pagina di articoli</h1>
+                
+                <hr>
+        
+                <label for="titolo"><b>Titolo</b></label>
+                <input type="text" placeholder="Titolo Articolo" name="titolo" id="titolo" required>
+
+                <br>
+        
+                <label><b>Articolo</b></label>
+                <hr>
+                <textarea id="articolo" name="articolo" placeholder="Scrivi qui il tuo articolo" rows="10" cols="100"></textarea>
+        
+                <br>
+        
+                <button type="button" id="submitData" name="submitData" class="sbmtbtn">Submit</button>
+
+                
+
+            
+            </div>
+
+        </form>
+
+
+
+
+    </body>
+</html>
+
+<script type="module">
+     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+     import { getFirestore, setDoc, getDoc, addDoc, doc, collection, deleteDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js"
+
+     const firebaseConfig = {
+    
+        apiKey: "AIzaSyDkEI6zrDInTLoKvXlY6KB5Ub_9e0_vcHY",
+        authDomain: "madasi123.firebaseapp.com",
+        projectId: "madasi123",
+        storageBucket: "madasi123.appspot.com",
+        messagingSenderId: "632160284592",
+        appId: "1:632160284592:web:76b3b571c0edb7d4daf075",
+    
+  };
+
+        const app = initializeApp(firebaseConfig);
+
+        const db = getFirestore(app);
+
+        submitData.addEventListener('click', (e) => {
+
+        var titolo =document.getElementById('titolo').value;
+        var articolo =document.getElementById('articolo').value;
+        addDoc(collection(db, "Articoli"), {
+        titolo: titolo,
+        articolo: articolo,
+
+    });
+
+        
+
+    });
+        loadData.addEventListener('click', (e) => {
+
+        window.location.href = "paginaArticoli.html";
+
+
+    });
+
+
+
+
+</script>
