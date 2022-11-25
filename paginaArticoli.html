@@ -1,6 +1,12 @@
 
 <html>
 <head>
+    <style>
+
+ table, td, th {   border: 1px solid black; }  table {   border-collapse: collapse;   width: 50%; } 
+
+
+</style>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -8,11 +14,15 @@
 <body>
     <div class="container mt-3">
     <table class="table table-dark">
-        <thead>
+        
             <th>Sno</th>
+            
+            
             <th>Titolo</th>
+       
+       
             <th>Articolo</th>
-        </thead>
+        
         <tbody id="tbody1"></tbody>
     </table>
 
@@ -32,7 +42,7 @@
         var stdNo = 0;
         var tbody = document.getElementById('tbody1')
         function AddItemToTable(titolo,articoli){
-            let trow = document.createElement("throw");
+            let trow = document.createElement("trow");
             let td1 = document.createElement('td');
             let td2 = document.createElement('td');
             let td3 = document.createElement('td');
@@ -52,7 +62,7 @@
         function AddAllItemsToTable(Articoli){
             stdNo=0;
             tbody.innerHTML="";
-            TheStudent.forEach(element =>{
+            Articoli.forEach(element =>{
                 AddItemToTable(element.titolo, element.articolo);
             });
         }
