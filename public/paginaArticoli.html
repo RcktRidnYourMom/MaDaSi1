@@ -143,25 +143,16 @@ h2{
 
 <script type="module">
 
-import {
-        getAuth,
-        signOut
-    } from "index.ts";
 
-
-    const auth = getAuth();
     
-logOut.addEventListener ('click', (e) => {
+    logOut.addEventListener ('click', (e) => {
 
-        signOut(auth).then(() => {
+       
             alert('log out successfully');
                         window.location.href = "index.html";
-        }).catch((error) => {
-            alert('An Error Occorred');
-  
-        });
+    
 
-    })
+    });
 
  
 
