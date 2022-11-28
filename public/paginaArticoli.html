@@ -3,8 +3,30 @@
 <head>
 <style>
 
- table, td,th {   border: 1px solid black; }  table {   border-collapse: collapse;   width: 100%; text-align: start; } 
+.container{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
 
+.table{
+    padding-top: 5%;
+}
+
+td{
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+
+}
+
+h2{
+    text-align: center;
+}
+
+.logoutbtn{
+
+
+}
 
 </style>
 
@@ -15,11 +37,12 @@
     <div class="container">
     <table class="table">
         
-            <th>ARTICOLI PUBBLICATI</th>
+            <h2> PUBBLICATI</h2>
 
         
         <tbody id="tbody1"></tbody>
     </table>
+    <button type="button" id="logOut" name="logOut" class="logoutbtn">Log Out</button>
 
 </div>
     
@@ -82,6 +105,7 @@
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
     import { getFirestore, setDoc, getDoc, getDocs, addDoc, doc, collection, deleteDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js"
+   
 
     const firebaseConfig = {
    
@@ -97,6 +121,8 @@
     const app = initializeApp(firebaseConfig);
 
     const db = getFirestore(app);
+
+
 
     async function GetAllDataOnce(){
         const querySnapshot = await getDocs(collection(db, "Articoli"));
@@ -114,3 +140,33 @@
     window.onload = GetAllDataOnce;
 
 </script>
+
+<script type="module">
+
+import {
+        getAuth,
+        signOut
+    } from "index.ts";
+
+
+    const auth = getAuth();
+    
+logOut.addEventListener ('click', (e) => {
+
+        signOut(auth).then(() => {
+            alert('log out successfully');
+                        window.location.href = "index.html";
+        }).catch((error) => {
+            alert('An Error Occorred');
+  
+        });
+
+    })
+
+ 
+
+
+
+
+</script>
+
