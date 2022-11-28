@@ -90,6 +90,7 @@
 
         <label><b>Password</b></label>
         <input type="password" placeholder="Password" name="psw" id="psw" required>
+        <input type="checkbox" onclick="myFunction()">Show Password
 
         <hr>
         <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
@@ -102,6 +103,17 @@
         <button type="button" id="signinData" name="siginData" class="registerbtn">Sign In</button>
     </div>
 </form>
+
+<script>
+    function myFunction() {
+      var x = document.getElementById("psw");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+    </script>
 
 </body>
 </html>
@@ -221,3 +233,4 @@
     
 
 </script>
+
