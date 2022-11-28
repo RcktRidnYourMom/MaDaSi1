@@ -1,236 +1,89 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: black;
-        }
+    <title>Welcome to Firebase Hosting</title>
 
-        * {
-            box-sizing: border-box;
-        }
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.14.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.14.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.14.0/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.14.0/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.14.0/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.14.0/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.14.0/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.14.0/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.14.0/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.14.0/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-        /* Add padding to containers */
-
-        .container {
-            padding: 16px;
-            background-color: white;
-        }
-
-        /* Full-width input fields */
-
-        input[type=text],
-        input[type=password] {
-            width: 100%;
-            padding: 15px;
-            margin: 5px 0 22px 0;
-            display: list-block;
-            border: none;
-            background: #f1f1f1;
-        }
-
-        input[type=text]:focus,
-        input[type=password]:focus {
-            background-color: #ddd;
-            outline: none;
-        }
-
-        /* Overwrite default styles of hr */
-
-        hr {
-            border: 1px solid #f1f1f1;
-            margin-bottom: 25px;
-        }
-
-        /* Set a style for the submit button */
-
-        .registerbtn {
-            background-color: #04AA6D;
-            color: white;
-            padding: 16px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-            width: 50%;
-            opacity: 0.9;
-        }
-
-        .registerbtn:hover {
-            opacity: 1;
-        }
-
-        /* Add a blue text color to links */
-
-        a {
-            color: dodgerblue;
-        }
-
-        /* Set a grey background color and center the text of the "sign in" section */
-
-        .signin {
-            background-color: #f1f1f1;
-            text-align: center;
-        }
-    </style>
-</head>
-
-<body>
-
-<form>
-    <div class="container">
-        <h1>Register</h1>
-        <p>Please fill in this form to create an account.</p>
-        <hr>
-
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" id="email" required>
-
-        <label><b>Password</b></label>
-        <input type="password" placeholder="Password" name="psw" id="psw" required>
-        <input type="checkbox" onclick="myFunction()">Show Password
-
-        <hr>
-        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-
-        <button type="button" id="submitData" name="submitData" class="registerbtn">Register</button>
-    </div>
-
-    <div class="container signin">
-        <p>Already have an account? </p>
-        <button type="button" id="signinData" name="siginData" class="registerbtn">Sign In</button>
-    </div>
-</form>
-
-<script>
-    function myFunction() {
-      var x = document.getElementById("psw");
-      if (x.type === "password") {
-        x.type = "text";
-      } else {
-        x.type = "password";
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
       }
-    }
+    </style>
+  </head>
+  <body>
+    <div id="message">
+      <h2>Welcome</h2>
+      <h1>Firebase Hosting Setup Complete</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    </div>
+    <p id="load">Firebase SDK Loading&hellip;</p>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
     </script>
-
-</body>
+  </body>
 </html>
-
-<script type="module">
-    // Import the functions you need from the SDKs you need
-    import {initializeApp} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-    import {
-        getAuth,
-        createUserWithEmailAndPassword,
-        signInWithEmailAndPassword,
-        signOut
-    } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
-    import {getDatabase, set, ref, update} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
-
-
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-        
-    apiKey: "AIzaSyDkEI6zrDInTLoKvXlY6KB5Ub_9e0_vcHY",
-    authDomain: "madasi123.firebaseapp.com",
-    databaseURL: "https://madasi123-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "madasi123",
-    storageBucket: "madasi123.appspot.com",
-    messagingSenderId: "632160284592",
-    appId: "1:632160284592:web:76b3b571c0edb7d4daf075",
-    measurementId: "G-CDF9Y3J8P1"
-    
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth();
-    const database = getDatabase(app);
-
-    submitData.addEventListener('click', (e) => {
-
-        var email = document.getElementById('email').value;
-        var password = document.getElementById('psw').value;
-
-        //sign up user
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                // Signed in
-                const user = userCredential.user;
-                // ... user.uid
-                set(ref(database, 'users/' + user.uid), {
-                    email: email,
-                    password: password
-                })
-                    .then(() => {
-                        // Data saved successfully!
-                        alert('user created successfully');
-                        window.location.href = "paginaScelte.html";
-        
-                    })
-                    .catch((error) => {
-                        // The write failed...
-                        alert(error);
-                    });
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // ..
-                alert(errorMessage);
-            });
-        });
-
-        // log in user
-    signinData.addEventListener('click', (e) => {
-
-            var email = document.getElementById('email').value;
-            var password = document.getElementById('psw').value;
-
-
-            signInWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                // Signed in
-                
-                    const user = userCredential.user;
-                    
-                // ...
-
-                // save log in details into real time database
-                    var lgDate = new Date();
-                    update(ref(database, 'users/' + user.uid), {
-                        last_login: lgDate,
-                    })
-                        .then(() => {
-                        // Data saved successfully!
-                            alert('user logged in successfully');
-                            window.location.href = "paginaScelte.html";
-
-                        })
-                        .catch((error) => {
-                        // The write failed...
-                            alert(error);
-                        });
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                alert(errorMessage);
-            });
-        }); 
-
-        // sign out user
-       // signOut(auth).then(() => {
-               // Sign-out successful.
-       // }).catch((error) => {
-            // An error happened.
-      //  });
-    
-
-</script>
-
