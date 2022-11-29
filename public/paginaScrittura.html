@@ -3,48 +3,34 @@
         <style>
             body {
                 font-family: Arial, Helvetica, sans-serif;
-                background-color: black;
+                background-color: rgb(0, 255, 26);
+            }
+            h1{
+                text-align: center;
+                margin-bottom: 50px;
+                margin-top: 10px;
+                font-style: oblique;
+                
+            
             }
     
-            * {
-                box-sizing: border-box;
-            }
+            /* input text*/
     
-            /* Add padding to containers */
-    
-            .container {
-                padding: 16px;
-                background-color: burlywood;
-            }
-    
-            /* Full-width input fields */
-    
-            input[type=text],
-            input[type=password] {
-                width: 33%;
-                padding: 15px;
+            input[type=text],textarea {
+                width: 100%;
+                padding: 20px;
                 margin: 5px 0 22px 0;
                 display: list-block;
                 border: none;
-                background: #f1f1f1;
+                background: #f2f989;
+                margin-bottom: 50px;
+                
             }
     
-            input[type=text]:focus,
-            input[type=password]:focus {
-                background-color: #ddd;
-                outline: none;
-            }
     
-            /* Overwrite default styles of hr */
+            /*Buttons */
     
-            hr {
-                border: 1px solid #f1f1f1;
-                margin-bottom: 25px;
-            }
-    
-            /* Set a style for the submit button */
-    
-            .sbmtbtn {
+            .caricaarticolo {
                 background-color: #04AA6D;
                 color: white;
                 padding: 16px 20px;
@@ -56,7 +42,7 @@
             }
 
             
-            .loadbtn {
+            .vaiaarticoli {
                 background-color: #04AA6D;
                 color: white;
                 padding: 16px 20px;
@@ -66,56 +52,29 @@
                 width: 20%;
                 opacity: 0.9;
             }
-    
-            .sbmtbtn:hover {
-                opacity: 1;
-            }
-    
-            /* Add a blue text color to links */
-    
-            a {
-                color: dodgerblue;
-            }
-    
-            /* Set a grey background color and center the text of the "sign in" section */
-    
-            .caricaart {
-                background-color: #f1f1f1;
+            p{
                 text-align: center;
+                font-size: 20px;
             }
         </style>
 
     </head>
     <body>
-        <form>
-            <div class="container">
-                <h1>Pagina di articoli</h1>
-                
-                <hr>
+                <h1>INSERISCI IL TUO ARTICOLO</h1>
         
-                <label for="titolo"><b>Titolo</b></label>
+                <p>TITOLO</p>
                 <input type="text" placeholder="Titolo Articolo" name="titolo" id="titolo" required>
 
                 <br>
         
-                <label><b>Articolo</b></label>
+                <p>ARTICOLO</p>
                 <hr>
-                <textarea id="articolo" name="articolo" placeholder="Scrivi qui il tuo articolo" rows="10" cols="100"></textarea>
+                <textarea id="articolo" name="articolo" placeholder="Scrivi qui il tuo articolo" rows="20" cols=100></textarea>
         
                 <br>
         
-                <button type="button" id="submitData" name="submitData" class="sbmtbtn">Submit</button>
-                <button type="button" id="loadData" name="loadData" class="loadbtn">Vai agli articoli</button>
-
-                
-
-            
-            </div>
-
-        </form>
-
-
-
+                <button type="button" id="submitData" name="submitData" class="caricaarticolo">CARICA</button>
+                <button type="button" id="loadData" name="loadData" class="vaiaarticoli">VAI AGLI ARTICOLI</button>
 
     </body>
 </html>
