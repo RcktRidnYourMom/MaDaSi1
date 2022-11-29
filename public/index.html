@@ -4,133 +4,251 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-    @import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@600&display=swap");
-    body {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: linear-gradient(45deg, rgb(255, 248, 47), rgb(229, 106, 18));
-      font-family: "Sansita Swashed", cursive;
-    }
-    body:hover{
-        background: linear-gradient(45deg, rgb(255, 248, 47), rgb(229, 106, 18));
-    }
-    .center {
-      position: relative;
-      padding: 50px 50px;
-      background: rgba(255, 238, 4, 0.397);
-      border-radius: 10px;
-    }
-    .center:hover {
-      background: linear-gradient(45deg, rgb(255, 248, 47), rgb(229, 106, 18));
-    }
-    .center h1 {
-      font-size: 2em;
-      border-left: 5px solid dodgerblue;
-      padding: 10px;
-      color: #000;
-      letter-spacing: 5px;
-      margin-bottom: 60px;
-      font-weight: bold;
-      padding-left: 10px;
-    }
-    .center .inputbox {
-      position: relative;
-      width: 300px;
-      height: 50px;
-      margin-bottom: 50px;
-    }
-    .center .inputbox input {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      border: 2px solid #000;
-      outline: none;
-      background: none;
-      padding: 10px;
-      border-radius: 10px;
-      font-size: 1.2em;
-    }
-    .center .inputbox:last-child {
-      margin-bottom: 0;
-    }
-    .center .inputbox span {
-      position: absolute;
-      top: 14px;
-      left: 20px;
-      font-size: 1em;
-      transition: 0.6s;
-      font-family: sans-serif;
-    }
-    .center .inputbox input:focus ~ span,
-    .center .inputbox input:valid ~ span {
-      transform: translateX(-13px) translateY(-35px);
-      font-size: 1em;
-    }
-    .center .inputbox [type="button"] {
-      width: 200px;
-      height: 80px;
-      background: rgb(229, 106, 18);
-      color: #fff;
-      border: #fff;
-      border-radius: 15px;
-    }
-    .center .inputbox1 [type="button"] {
-      width: 100px;
-      height: 40px;
-      background: rgb(255, 121, 25);
-      color: #fff;
-      border: #fff;
-      border-radius: 15px;
-    }
-    .center .inputbox1:hover [type="button"] {
-      background: linear-gradient(45deg, rgb(255, 248, 47), rgb(229, 106, 18));
-    }
-    .center .inputbox:hover [type="button"] {
-      background: linear-gradient(45deg, rgb(255, 248, 47), rgb(229, 106, 18));
-    }
+
+@import url('https://fonts.cdnfonts.com/css/black-box');
+@import url('https://fonts.cdnfonts.com/css/belgia-2');
+html {
+  height: 100%;
+}
+body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+  font-family: 'Belgia', sans-serif;
+  background-image:url("https://images.unsplash.com/photo-1496065187959-7f07b8353c55?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+p {
+    color: white;
+    font-size: 20PX;
+  }
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0);
+  box-sizing: border-box;
+  box-shadow: 0 45px 55px rgba(0,0,0);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 50PX;
+  font-family: 'BLACK BOX', sans-serif;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  margin-left: 20px;
+  letter-spacing: 4px
+  
+}
+.login-box .privacy {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 20px;
+  margin-left: 20px;
+  letter-spacing: 4px
+  
+}
+
+.login-box a:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
+}
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+.login-box a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.login-box a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.login-box a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+ 
+}
 </style>
 </head>
 
 <body>
 
 
-<div class="center">
-    <h1>Register</h1>
-        <p>Please fill in this form to create an account.</p>
+<div class="login-box">
+    <h2>MADASI</h2>
+        
         <form>
 
         
-        <div class="inputbox">
+        <div class="user-box">
         <input type="text" placeholder="Enter Email" name="email" id="email" required>
         
         </div>
 
-        <div class="inputbox">
+        <div class="user-box">
         <input type="password" placeholder="Password" name="psw" id="psw" required>
+        <img src="icona occhio.png" alt="iconaOcchio" onclick="myFunction()" class="occhio" height="30px" width="30px">
+     
+          
+   
         
         
         </div>
-        <div class="inputbox">
-            <input type="checkbox" onclick="myFunction()">Show Password
-        </div>
+       
 
-        <hr>
-        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
         
-        <div class="inputbox">
-        <button type="button" id="submitData" name="submitData" class="registerbtn">Register</button>
-        </div>
+        <p>By creating an account you agree to our <a href="#" class="privacy" id="terms">Terms & Privacy</a></p>
+        
+        <a href="#" id="submitData">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Register
+        </a>
 
-    <div class="inputbox1">
-        <p>Already have an account? </p>
-        <button type="button" id="signinData" name="siginData" class="registerbtn">Sign In</button>
-    </div>
+    <a href="#" id="signinData">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Sign in
+    </a>
 </form>
 </div>
 
@@ -254,6 +372,10 @@
                 alert(errorMessage);
             });
         }); 
+
+    terms.addEventListener('click', (e) => {
+          window.location.href = "terms&condition.html";
+         });
 
         // sign out user
        // signOut(auth).then(() => {

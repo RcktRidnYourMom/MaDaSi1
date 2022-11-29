@@ -1,172 +1,38 @@
 <html>
     <head>
-
-        <style>
-
-            * {
-  box-sizing: border-box;
-}
+      <link rel="stylesheet" href="style/style.css">
 
 
-.container {
-  height: 50%;
-  position: relative;
- 
-  background-image: url("https://images.unsplash.com/photo-1522881451255-f59ad836fdfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1572&q=80");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.container1 {
-  height: 50%;
-  position: relative;
+    </head>
+<body>
   
 
-  background-image: url("https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+<div class="middle">
+  <h1>CHOOSE WHAT TO DO:</h1>
+  
+  <label>
+  <input type="radio" name="radio" id="read"/>
+  
+  <div class="front-end box">
+    <span>READ ARTICLE</span>
+    <img src="leggi.png" alt="iconaleggi" class="icona" height="90px" width="90px">
+  </div>
+</label>
 
-.center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
+  <label>
+  <input type="radio" name="radio" id="write"/>
+ 
+  
+  <div class="back-end box">
+    
+    <span>WRITE ARTICLE</span>
+    <img src="write.png" alt="iconascrivi" class="icona" height="90px" width="90px">
+  </div>
+</label>
+  
+</div>
+</body>
 
-
-.sbmtbtn {
-  align-items: center;
-  appearance: none;
-  background-clip: padding-box;
-  background-color: initial;
-  background-image: none;
-  border-style: none;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  flex-direction: row;
-  flex-shrink: 0;
-  font-family: Eina01,sans-serif;
-  font-size: 16px;
-  font-weight: 800;
-  justify-content: center;
-  line-height: 24px;
-  margin: 0;
-  min-height: 160px;
-  outline: none;
-  overflow: visible;
-  padding: 19px 26px;
-  pointer-events: auto;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  text-transform: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
-  width: 400px;
-  word-break: keep-all;
-  z-index: 0;
-}
-
-@media (min-width: 768px) {
-    .sbmtbtn {
-    padding: 19px 32px;
-  }
-}
-
-.sbmtbtn:before,
-.sbmtbtn:after {
-  border-radius: 80px;
-}
-
-.sbmtbtn:before {
-  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
-  content: "";
-  display: block;
-  height: 100%;
-  left: 0;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: -2;
-}
-
-.sbmtbtn:after {
-  background-color: initial;
-  background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);
-  bottom: 4px;
-  content: "";
-  display: block;
-  left: 4px;
-  overflow: hidden;
-  position: absolute;
-  right: 4px;
-  top: 4px;
-  transition: all 100ms ease-out;
-  z-index: -1;
-}
-
-.sbmtbtn:hover:not(:disabled):before {
-  background: linear-gradient(92.83deg, rgb(255, 116, 38) 0%, rgb(249, 58, 19) 100%);
-}
-
-.sbmtbtn:hover:not(:disabled):after {
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  transition-timing-function: ease-in;
-  opacity: 0;
-}
-
-.sbmtbtn:active:not(:disabled) {
-  color: #ccc;
-}
-
-.sbmtbtn:active:not(:disabled):before {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
-}
-
-.sbmtbtn:active:not(:disabled):after {
-  background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);
-  bottom: 4px;
-  left: 4px;
-  right: 4px;
-  top: 4px;
-}
-
-.sbmtbtn:disabled {
-  cursor: default;
-  opacity: .24;
-}
-            
-
-
-
-
-            
-</style>
-
-</head>
-    <body>
-        <div class="container">
-            <div class="center">
-                <button type="button" id="write" name="writeArt" class="sbmtbtn">Scrivi Articolo</button>
-            </div>
-        </div>
-        <div class="container1">
-            <div class="center">
-                <button type="button" id="read" name="readArt" class="sbmtbtn">Leggi Articolo</button>
-            </div>
-        </div>
-    </body>
-</html>
 
 <script type="module">
 
