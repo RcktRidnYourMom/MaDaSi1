@@ -1,16 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Inter:400'");
 @import url('https://fonts.cdnfonts.com/css/belgia-2');
-@import url('https://fonts.cdnfonts.com/css/black-box');
+@import url('https://fonts.googleapis.com/css?family=Bakbak One');
 html {
   background-color: #1a1a1a;
   overflow: hidden;
-  background-image:url("https://images.unsplash.com/photo-1592659762303-90081d34b277?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80");
+  background-image:url("https://images.unsplash.com/photo-1605033375841-e6be8a34917c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
   background-repeat: no-repeat;
   background-size: cover;
   
-}
-.icona{
-padding-top: 20px;
 }
 
 div.middle {
@@ -19,10 +16,16 @@ div.middle {
   /* Made by */
 }
 div.middle h1 {
-  font-family: 'Belgia', sans-serif;
-  color: #a0030dcb;
-  font-size: 200px;
+  
+  font-family: 'Bakbak One';
+  color: #000000d1;
+  font-size: 80px;
   box-sizing: border-box;
+  border-radius: 20px;
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 10px;
   
 }
 
@@ -48,7 +51,7 @@ div.middle input[type=radio]:checked + .box span:before {
   opacity: 1;
 }
 div.middle div.box {
-  width: 300px;
+  width: 500px;
   height: 300px;
   background-color:#970a0aeb;
   transition: all 250ms ease;
@@ -60,12 +63,12 @@ div.middle div.box {
   font-family: "Inter", sans-serif;
   font-weight: 900;
   margin: 150px;
-  margin-top: 60px;
+  margin-top: 80px;
   font-family: 'Belgia', sans-serif;
   border-radius: 20px;
   font-size: 20px;
 
-  background-image: url("https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+  background-image: url("https://images.unsplash.com/photo-1605033375841-e6be8a34917c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
 }
 div.middle div.box:hover {
 background: #a0030dcb;
@@ -122,6 +125,12 @@ div.middle p span:after {
   content: "\f0e7";
   font-family: FontAwesome;
   color: yellow;
+}
+
+@media screen and (max-width: 600px) {
+  .icona {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
