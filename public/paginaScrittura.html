@@ -1,49 +1,101 @@
+<!DOCTYPE >
 <html>
-    <head>
-        <style>
-            body {
-                font-family: Arial, Helvetica, sans-serif;
-                background-color: rgb(0, 255, 26);
-            }
-            h1{
-                text-align: center;
-                margin-bottom: 50px;
-                margin-top: 10px;
-                font-style: oblique;
-                
-            
-            }
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title></title>
+	
+	<style type="text/css">
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Verdana, sans-serif;
+    font-size: 14px;
+}
+
+#form {
+    width: 500px;
+    margin: 50px auto;
+    background: #222;
+    padding:30px;
+    overflow: hidden;
+    margin-top: 150px;
     
-            /* input text*/
-    
-            input[type=text],textarea {
-                width: 100%;
-                padding: 20px;
-                margin: 5px 0 22px 0;
-                display: list-block;
-                border: none;
-                background: #f2f989;
-                margin-bottom: 50px;
-                
-            }
-    
-    
-            /*Buttons */
-    
-            .caricaarticolo {
-                background-color: #04AA6D;
-                color: white;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+}
+
+h1 {
+    font-size: 16px;
+    color: #FCCC69;
+    margin-bottom: 70px;
+    text-align: center;
+    font-size: 30px;
+
+}
+
+label, input, textarea {
+    color: #dedede;
+    float: left;
+    font-family: Verdana, sans-serif;
+    margin: 10px 0;
+    margin-bottom: 60px;
+}
+label {
+    display: block;
+    line-height: 30px;
+    width: 150px;
+    color:  #FCCC69;
+    font-size: 18px;
+}
+
+input, textarea {
+    background: #1C1C1C;
+    border: 1px solid #323232;
+    color:  #FCCC69;
+    height: 40px;
+    line-height: 50px;
+    width: 320px;
+    padding: 0 10px;
+}
+
+input { padding-left: 30px; }
+
+textarea {
+    background: #1C1C1C ;
+    font-size: 12px;
+    height: 200px;
+    width: 320px;
+    overflow: hidden;
+}
+
+#submit {
+    padding: 0;
+    width: 100px;
+}
+#loaddata{
+    margin-left: 115px;
+
+}
+#submitdata{
+    margin-left: 150px;
+
+}
+.caricaarticolo {
+                background-color: #474444;
+                color: rgb(255, 255, 255);
                 padding: 16px 20px;
                 margin: 8px 0;
                 border: none;
                 cursor: pointer;
                 width: 20%;
                 opacity: 0.9;
+                border-radius: 15px;
             }
 
             
             .vaiaarticoli {
-                background-color: #04AA6D;
+                background-color: #474444;
                 color: white;
                 padding: 16px 20px;
                 margin: 8px 0;
@@ -51,73 +103,70 @@
                 cursor: pointer;
                 width: 20%;
                 opacity: 0.9;
+                border-radius: 15px;
             }
-            p{
-                text-align: center;
-                font-size: 20px;
-            }
-        </style>
 
-    </head>
-    <body>
-                <h1>INSERISCI IL TUO ARTICOLO</h1>
-        
-                <p>TITOLO</p>
-                <input type="text" placeholder="Titolo Articolo" name="titolo" id="titolo" required>
+    </style>
+</head>
+<body>
 
-                <br>
-        
-                <p>ARTICOLO</p>
-                <hr>
-                <textarea id="articolo" name="articolo" placeholder="Scrivi qui il tuo articolo" rows="20" cols=100></textarea>
-        
-                <br>
-        
-                <button type="button" id="submitData" name="submitData" class="caricaarticolo">CARICA</button>
-                <button type="button" id="loadData" name="loadData" class="vaiaarticoli">VAI AGLI ARTICOLI</button>
+<form action="#">
+    <div id="form">
+        <h1>PUBBLICA IL TUO ARTICOLO</h1>
+        <label for="nome">TITOLO</label>
+        <input type="text" placeholder="Titolo Articolo" name="titolo" id="titolo" required>
 
-    </body>
+        <label for="messaggio">ARTICOLO</label>
+        <textarea id="articolo" name="articolo" placeholder="Scrivi qui il tuo articolo"></textarea>
+        
+        <button type="button" id="submitData" name="submitData" class="caricaarticolo">CARICA</button>
+        <button type="button" id="loadData" name="loadData" class="vaiaarticoli">VAI AGLI ARTICOLI</button>
+
+    </div>
+</form>
+
+</body>
 </html>
 
 <script type="module">
-     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-     import { getFirestore, setDoc, getDoc, addDoc, doc, collection, deleteDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js"
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+    import { getFirestore, setDoc, getDoc, addDoc, doc, collection, deleteDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js"
 
-     const firebaseConfig = {
-    
-        apiKey: "AIzaSyDkEI6zrDInTLoKvXlY6KB5Ub_9e0_vcHY",
-        authDomain: "madasi123.firebaseapp.com",
-        projectId: "madasi123",
-        storageBucket: "madasi123.appspot.com",
-        messagingSenderId: "632160284592",
-        appId: "1:632160284592:web:76b3b571c0edb7d4daf075",
-    
-  };
+    const firebaseConfig = {
+   
+       apiKey: "AIzaSyDkEI6zrDInTLoKvXlY6KB5Ub_9e0_vcHY",
+       authDomain: "madasi123.firebaseapp.com",
+       projectId: "madasi123",
+       storageBucket: "madasi123.appspot.com",
+       messagingSenderId: "632160284592",
+       appId: "1:632160284592:web:76b3b571c0edb7d4daf075",
+   
+ };
 
-        const app = initializeApp(firebaseConfig);
+       const app = initializeApp(firebaseConfig);
 
-        const db = getFirestore(app);
+       const db = getFirestore(app);
 
-        submitData.addEventListener('click', (e) => {
+       submitData.addEventListener('click', (e) => {
 
-        var titolo =document.getElementById('titolo').value;
-        var articolo =document.getElementById('articolo').value;
-        addDoc(collection(db, "Articoli"), {
-        titolo: titolo,
-        articolo: articolo,
-        
+       var titolo =document.getElementById('titolo').value;
+       var articolo =document.getElementById('articolo').value;
+       addDoc(collection(db, "Articoli"), {
+       titolo: titolo,
+       articolo: articolo,
+       
 
-    });
+   });
 
-        
+       
 
-    });
-        loadData.addEventListener('click', (e) => {
+   });
+       loadData.addEventListener('click', (e) => {
 
-        window.location.href = "paginaArticoli.html";
+       window.location.href = "paginaArticoli.html";
 
 
-    });
+   });
 
 
 
