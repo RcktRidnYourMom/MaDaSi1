@@ -211,19 +211,22 @@ img{
 
         
         <div class="user-box">
+        <input type="text" placeholder="Enter your name" name="name" id="name" required>
+        </div>
+
+        <div class="user-box">
         <input type="text" placeholder="Enter Title" name="title" id="titolo" required>
         
         </div>
 
         <div class="user-box">
-        <textarea placeholder= "Write your article..." name="articolo" id="psw" cols="50" rows="25" required></textarea>
-     
-          
-   
-        
-        
+        <textarea placeholder= "Write your article..." name="articolo" id="psw" cols="50" rows="20" required></textarea>
         </div>
-        
+
+        <div class="user-box">
+        <input type="date" name="date" id="date" required>
+        </div>
+
         <a href="#" id="submitData">
           <span></span>
           <span></span>
@@ -267,11 +270,18 @@ img{
 
        submitData.addEventListener('click', (e) => {
 
+       var name =document.getElementById('name').value; 
        var titolo =document.getElementById('titolo').value;
        var articolo =document.getElementById('psw').value;
+       var date =document.getElementById('date').value;
+
        addDoc(collection(db, "Articoli"), {
+
+       name: name, 
        titolo: titolo,
        articolo: articolo,
+       date: date
+       
        
 
    });
