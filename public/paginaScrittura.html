@@ -211,12 +211,12 @@ img{
 
         
         <div class="user-box">
-        <input type="text" placeholder="Enter Title" name="title" id="title" required>
+        <input type="text" placeholder="Enter Title" name="title" id="titolo" required>
         
         </div>
 
         <div class="user-box">
-        <textarea placeholder= "Write your article..." name="article" id="psw" cols="50" rows="25" required></textarea>
+        <textarea placeholder= "Write your article..." name="articolo" id="psw" cols="50" rows="25" required></textarea>
      
           
    
@@ -268,7 +268,7 @@ img{
        submitData.addEventListener('click', (e) => {
 
        var titolo =document.getElementById('titolo').value;
-       var articolo =document.getElementById('articolo').value;
+       var articolo =document.getElementById('psw').value;
        addDoc(collection(db, "Articoli"), {
        titolo: titolo,
        articolo: articolo,
