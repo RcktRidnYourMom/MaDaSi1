@@ -1,60 +1,268 @@
+<!DOCTYPE html>
 <html>
-    <head>
-      <link rel="stylesheet" href="style/style.css">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+@import url('https://fonts.cdnfonts.com/css/black-box');
+@import url('https://fonts.cdnfonts.com/css/belgia-2');
+html {
+  height: 100%;
+}
+body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+  font-family: 'Belgia', sans-serif;
+  background-image:url("https://images.unsplash.com/photo-1496065187959-7f07b8353c55?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+p {
+    color: white;
+    font-size: 20PX;
+  }
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0);
+  box-sizing: border-box;
+  box-shadow: 0 45px 55px rgba(0,0,0);
+  border-radius: 10px;
+  opacity: 0.9;
+}
+img{
+  right: 50%;
+  left: 50%;
+  padding-left: 35%;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 50PX;
+  font-family: 'BLACK BOX', sans-serif;
+}
+
+.login-box .user-box {
+  position: relative;
+}
 
 
-    </head>
-<body>
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 35px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  margin-left: 50px;
+  letter-spacing: 4px
+
   
-
-<div class="middle">
-  <div>
-  <img src="logo (4).png" alt="madasi logo" class="logo">
-  <h1> invites you to : </h1>
-  </div>
-
+}
+.login-box .privacy {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 20px;
+  margin-left: 20px;
+  letter-spacing: 4px
   
-  <label>
-  <input type="radio" name="radio" id="read"/>
-  
-  <div class="front-end box">
-    <span>READ AN ARTICLE</span>
-    <img src="leggi.png" alt="iconaleggi" class="icona" height="90px" width="90px">
-  </div>
-</label>
+}
 
-  <label>
-  <input type="radio" name="radio" id="write"/>
+.login-box a:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #db68ed,
+              0 0 25px #db68ed,
+              0 0 50px #db68ed,
+              0 0 100px #db68ed;
+}
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+.login-box a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #db68ed);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #db68ed);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.login-box a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #db68ed);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.login-box a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #db68ed);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
  
-  
-  <div class="back-end box">
-    
-    <span>WRITE AN ARTICLE</span>
-    <img src="write.png" alt="iconascrivi" class="icona" height="90px" width="90px">
-  </div>
-</label>
-  
+}
+</style>
+
+</head>
+
+<body>
+
+
+<div class="login-box">
+    <img src="img/logo.png" alt="logo madasi" width="300px" height="150px">
+        
+        <form>    
+        <a href="#" id="write">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <img src="img/write2.png" alt="icon write">
+          <br>
+          Tell us some stories
+        </a>
+
+    <a href="#" id="read">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <img src="img/read2.png" alt="icona read">
+      <br>
+      Read someones story
+    </a>
+</form>
 </div>
+
 </body>
 
+</html>
 
 <script type="module">
 
-write.addEventListener('click', (e) => {
-
-window.location.href = "paginaScrittura.html";
-
-
-});
-
-read.addEventListener('click', (e) => {
-
-window.location.href = "paginaArticoli.html";
-
-
-});
-
-
-</script>
+  write.addEventListener('click', (e) => {
+  
+  window.location.href = "paginaScrittura.html";
+  
+  
+  });
+  
+  read.addEventListener('click', (e) => {
+  
+  window.location.href = "paginaArticoli.html";
+  
+  
+  });
+  
+  
+  </script>
