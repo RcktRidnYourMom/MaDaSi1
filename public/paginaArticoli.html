@@ -20,6 +20,23 @@
   background-color: black;
   
 }
+
+p{
+  color: rgb(0, 0, 0);
+
+
+  font-weight:lighter;
+
+}
+h2{
+  font-size: 35px;
+  font-weight: bolder;
+  font-family: 'Belgia', sans-serif,bold;
+  margin-top: 30px ;
+
+}
+
+
  a:hover {
   background: #03e9f4;
   color: #fff;
@@ -141,8 +158,8 @@ a span:nth-child(3) {
     margin:0;
     padding:0;
     font-family: sans-serif;
-    color: rgb(178, 11, 153);
-    background-color: black;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
 
     font-family: 'Belgia', sans-serif;
   
@@ -208,7 +225,7 @@ a span:nth-child(3) {
             var tbody = document.getElementById('tbody1')
             function AddTitleToTable(titolo){
                 let div = document.createElement("div");
-                let td1 = document.createElement('div');
+                let td1 = document.createElement('h2');
                 
     
                 
@@ -222,8 +239,8 @@ a span:nth-child(3) {
             }
             function AddNameandDateToTable(name, date){
                 let div3 = document.createElement("div");
-                let td3 = document.createElement('div');
-                let td4 = document.createElement('div')
+                let td3 = document.createElement('p');
+                let td4 = document.createElement('p')
                 
     
                 
